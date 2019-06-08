@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Downtown Map</title>
+		<link href="css/style.css" type="text/css" rel="stylesheet" />
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/loader.js"></script>
+		<script src="js/raf.js"></script>
+		<script src="js/ac.js"></script>
+		<script src="js/sound.js"></script>
+		<script src="js/engine.js"></script>
+		<script src="js/stamps.js"></script>
+		<script src="js/map.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<canvas id="scene" width="900" height="675"></canvas>
+
+				<div id="intro" class="layer">
+
+					<div class="box effect8">
+						<h1>Downtown Fredericksburg</h1>
+						<h3>Interactive Walking Map</h3>
+					</div>
+					<button onclick='start();' id="btn-intro" class="btn">Open</button>
+				</div>
+
+				<div id="stampsUI" class="layer2">
+							<input id="btn-returnmain" type="image" src="images/icon-backbtn.png"/>
+				</div>
+
+				<div id="locDiv" class ="layer">
+					<div id="navElements">
+						<button id="btn-back" class="btn">Back</button>
+					<!--	<span id="nav-right"><input id="btn-stamps" type="image" src="images/icon-book.png"/></span> -->
+					</div>
+
+				 <div class="locContent" >Test </div>
+			  </div>
+				<script>
+				//full screen on mobile devices to landscape orientation // TO DO - move to script.js
+					function ready() {
+					  const { type } = screen.orientation;
+					  console.log("Fullscreen and locked to ${type}. Ready!");
+					}
+
+					async function start() {
+					  await document.body.requestFullscreen();
+					  await screen.orientation.lock("landscape");
+					  ready();
+					}
+				</script>
+				<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfqNtc9RvXcCZtNOqFKfW6ETmus5CMeW553QBpDDjzn6H6RCA/viewform?usp=sf_link">Please Evaluate your Experience</a></p>
+	</body>
+</html>
